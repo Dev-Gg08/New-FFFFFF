@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | Application for University of Oxford</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Academic elegant fonts: Cinzel for headings, Lora for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D Interactive Canvas -->
+    <div id="canvas-container">
+        <canvas id="webgl-canvas"></canvas>
+    </div>
+
+    <!-- UI Overlay (Oxford Elegant Theme) -->
+    <nav class="navbar">
+        <div class="logo">PORTFOLIO.CANDIDATE</div>
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#projects">Methodology</a>
+            <a href="#contact">Statement</a>
+        </div>
+    </nav>
+
+    <main class="scroll-container">
+        <!-- Section 1: Hero -->
+        <section class="panel hero">
+            <div class="hero-content">
+                <p class="tagline">Application for the University of Oxford</p>
+                <h1 class="elegant-title">EXPLORING<br>COMPUTATIONAL<br>COMPLEXITY.</h1>
+                <p class="sub-desc">
+                    Bridging the theoretical depths of Computer Science with the elegant realities of Mathematical Physics and Interactive Systems.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <p>Scroll to Explore</p>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Academic Focus -->
+        <section class="panel academic" id="research">
+            <div class="grid-layout">
+                <div class="grid-left">
+                    <h2 class="section-title">ACADEMIC<br>RIGOUR</h2>
+                </div>
+                <div class="grid-right">
+                    <div class="thesis-item">
+                        <h3>1. Algorithmic Optimization</h3>
+                        <p>Researching advanced data structures to minimize time complexity in NP-hard geometric routing problems.</p>
+                        <div class="gold-line"></div>
+                    </div>
+                    <div class="thesis-item">
+                        <h3>2. Machine Learning Architecture</h3>
+                        <p>Developing robust neural networks focused on interpretability and reducing computational overhead in natural language processing.</p>
+                        <div class="gold-line"></div>
+                    </div>
+                    <div class="thesis-item">
+                        <h3>3. Quantum Information</h3>
+                        <p>Studying the mathematical foundations of quantum cryptography and simulating state vectors using high-performance compute clusters.</p>
+                        <div class="gold-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Demonstrated Works -->
+        <section class="panel projects" id="projects">
+            <h2 class="section-title text-center">SELECTED PAPERS & PROJECTS</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-year">2025</span>
+                        <h3 class="serif-h3">Neural Topology Mapping</h3>
+                        <p>A thesis on visualizing high-dimensional manifolds of trained neural networks. Implemented a rendering pipeline to project 5D spaces into navigable 3D environments.</p>
+                        <a href="#" class="read-more">Read Thesis <span>&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="project-card alternate">
+                    <div class="project-info">
+                        <span class="project-year">2024</span>
+                        <h3 class="serif-h3">Abstract Syntax Tree Synthesizer</h3>
+                        <p>A custom compiler written in Rust that mathematically analyzes programmatic structures to predict execution bottlenecks before runtime compilation.</p>
+                        <a href="#" class="read-more">View Repository <span>&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Statement of Purpose -->
+        <section class="panel statement" id="contact">
+            <div class="statement-box">
+                <h2 class="section-title">STATEMENT OF PURPOSE</h2>
+                <p class="sop-text">
+                    "I believe that the true essence of computer science is not merely writing code, but understanding the profound mathematical truths that govern information. Oxford’s tradition of rigorous inquiry aligns perfectly with my ambition to push the boundaries of computational theory."
+                </p>
+                <a href="mailto:admission@oxford.edu" class="gold-btn">REQUEST FULL C.V.</a>
+            </div>
+            <p class="footer-credit">NON INFERIORA SECUTUS — Seeking nothing inferior</p>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls source from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

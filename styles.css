@@ -1,0 +1,374 @@
+:root {
+    --oxford-blue: #002147;
+    --oxford-text: #F9F6F0;    /* Ivory / Off-white */
+    --oxford-gold: #D4AF37;    /* Metallic Academic Gold */
+    --oxford-gold-dim: rgba(212, 175, 55, 0.4);
+    --border-color: rgba(249, 246, 240, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Base font is the elegant Lora Serif */
+    font-family: 'Lora', serif;
+}
+
+body {
+    background-color: var(--oxford-blue);
+    color: var(--oxford-text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    /* A subtle vignette effect to make the center pop */
+    background-image: radial-gradient(circle at center, #003066 0%, #002147 100%);
+    background-attachment: fixed;
+}
+
+::selection {
+    background: var(--oxford-gold);
+    color: var(--oxford-blue);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--oxford-blue);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--oxford-gold-dim);
+}
+
+/* 3D Canvas */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: auto;
+}
+#webgl-canvas {
+    outline: none;
+    cursor: grab;
+}
+#webgl-canvas:active {
+    cursor: grabbing;
+}
+
+/* UI Overlay */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    pointer-events: none;
+}
+.navbar .logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    pointer-events: auto;
+    color: var(--oxford-gold);
+}
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    pointer-events: auto;
+}
+.nav-links a {
+    color: var(--oxford-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-family: 'Cinzel', serif;
+}
+.nav-links a:hover {
+    color: var(--oxford-gold);
+}
+
+/* Scroll Containers */
+.scroll-container {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.panel {
+    min-height: 100vh;
+    padding: 6rem 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+}
+.panel > * {
+    pointer-events: auto;
+}
+
+/* Hero Section */
+.hero-content {
+    max-width: 800px;
+    margin-top: 5vh;
+}
+
+.tagline {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: var(--oxford-gold);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--oxford-gold-dim);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.elegant-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.sub-desc {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #e0dcd3;
+    max-width: 600px;
+    font-style: italic;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 4rem;
+    left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--oxford-gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.scroll-indicator .line {
+    width: 1px;
+    height: 60px;
+    background: var(--oxford-gold);
+    animation: scrollLine 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+    transform-origin: top;
+}
+
+@keyframes scrollLine {
+    0% { transform: scaleY(0); }
+    50% { transform: scaleY(1); }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Section specific */
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    color: var(--oxford-gold);
+}
+.text-center { text-align: center; }
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .grid-layout { grid-template-columns: 1fr; }
+}
+
+/* Academic Section */
+.thesis-item {
+    margin-bottom: 3.5rem;
+}
+
+.thesis-item h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.thesis-item p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cfcbc2;
+}
+
+.gold-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--oxford-gold), transparent);
+    margin-top: 1.5rem;
+    opacity: 0.5;
+}
+
+/* Projects Section */
+.projects {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card {
+    padding: 3rem;
+    border: 1px solid var(--oxford-gold-dim);
+    background: rgba(0, 33, 71, 0.6);
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s, background 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--oxford-gold);
+    transform: scaleY(0);
+    transition: transform 0.4s;
+    transform-origin: bottom;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 33, 71, 0.9);
+}
+
+.project-card:hover::before {
+    transform: scaleY(1);
+}
+
+.project-card.alternate {
+    text-align: right;
+}
+.project-card.alternate::before {
+    left: auto; right: 0;
+}
+
+.project-year {
+    font-family: 'Cinzel', serif;
+    color: var(--oxford-gold);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.serif-h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.project-info p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.read-more {
+    font-family: 'Cinzel', serif;
+    color: var(--oxford-gold);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.read-more:hover { gap: 15px; }
+
+/* Statement Section */
+.statement {
+    align-items: center;
+}
+
+.statement-box {
+    max-width: 800px;
+    text-align: center;
+    border: 1px solid var(--oxford-gold-dim);
+    padding: 5rem 4rem;
+    position: relative;
+}
+
+/* Elegant corner accents */
+.statement-box::before, .statement-box::after {
+    content: ''; position: absolute; width: 30px; height: 30px; border: 2px solid var(--oxford-gold);
+}
+.statement-box::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.statement-box::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.sop-text {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-style: italic;
+    margin-bottom: 3.5rem;
+    color: #e0dcd3;
+}
+
+.gold-btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: 1px solid var(--oxford-gold);
+    color: var(--oxford-gold);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s;
+    background: transparent;
+}
+
+.gold-btn:hover {
+    background: var(--oxford-gold);
+    color: var(--oxford-blue);
+}
+
+.footer-credit {
+    margin-top: 4rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(249, 246, 240, 0.4);
+}
