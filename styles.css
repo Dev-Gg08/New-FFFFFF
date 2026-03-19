@@ -56,8 +56,8 @@ body {
 
 /* Cinematic Background Watermarks */
 .bg-watermark {
-    position: fixed; font-family: 'Cinzel', serif; font-size: 20vw; font-weight: 800;
-    color: rgba(255, 255, 255, 0.015); /* Reduced opacity immensely */
+    position: fixed; font-family: 'Cinzel', serif; font-size: 15vw; font-weight: 800;
+    color: rgba(255, 255, 255, 0.015); 
     white-space: nowrap; z-index: 0; pointer-events: none; user-select: none;
 }
 .w-1 { top: 10%; right: -5%; }
@@ -100,7 +100,7 @@ body {
     min-height: 100vh; padding: 6rem 10vw;
     display: flex; flex-direction: column; justify-content: center; 
     pointer-events: none; 
-    position: relative; /* BUG FIX: Crucial for .scroll-indicator */
+    position: relative;
 }
 .panel > * { pointer-events: auto; }
 
@@ -189,8 +189,13 @@ body {
 .project-card.alternate { text-align: right; }
 
 .project-year {
-    font-family: 'Cinzel', serif; color: var(--oxford-gold); font-size: 1.1rem;
-    display: block; margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif; color: var(--oxford-gold); font-size: 1rem;
+    display: block; margin-bottom: 0.8rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.project-year i {
+    font-size: 1.2rem;
+    margin-right: 5px;
 }
 .serif-h3 { font-size: 2rem; margin-bottom: 1rem; font-family: 'Cinzel', serif; }
 .project-info p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; }
@@ -206,9 +211,9 @@ body {
 .statement-box {
     max-width: 800px; text-align: center; border: 1px solid var(--oxford-gold);
     padding: 5rem 4rem; position: relative; 
-    background: rgba(0, 20, 50, 0.85); /* Darkened carefully for better contrast */
+    background: rgba(0, 20, 50, 0.85); 
     backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6); /* Drop shadow to separate from 3D background */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
 }
 .corner-accents::before, .corner-accents::after {
     content: ''; position: absolute; width: 40px; height: 40px; border: 2px solid var(--oxford-gold);
@@ -217,11 +222,57 @@ body {
 .corner-accents::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
 
 .sop-text {
-    font-size: 1.3rem; line-height: 2; font-style: italic; color: #ffffff;
+    font-family: 'Prompt', sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 2; color: #ffffff;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
+
+/* Social Buttons */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid var(--oxford-gold-dim);
+    color: var(--oxford-gold);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    background: rgba(0, 20, 50, 0.5);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.social-btn::before {
+    content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 0%;
+    background: var(--oxford-gold); z-index: -1; transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-btn:hover {
+    color: var(--oxford-blue);
+    border-color: var(--oxford-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.social-btn:hover::before {
+    height: 100%;
+}
+
 .gold-btn {
-    display: inline-block; padding: 1.2rem 3rem; border: 1px solid var(--oxford-gold);
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 1rem 2.5rem; border: 1px solid var(--oxford-gold);
     color: var(--oxford-gold); text-decoration: none; font-family: 'Cinzel', serif;
     font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.4s;
     background: transparent; position: relative; overflow: hidden;
@@ -237,4 +288,63 @@ body {
 .footer-credit {
     margin-top: 4rem; font-family: 'Cinzel', serif; font-size: 0.75rem;
     letter-spacing: 3px; text-transform: uppercase; color: rgba(249, 246, 240, 0.3);
+}
+
+/* About Section Styles */
+.about-grid { align-items: center; }
+.about-profile { display: flex; justify-content: flex-end; position: relative; }
+.profile-image-container { position: relative; width: 350px; height: 350px; z-index: 2; margin-right: 2rem; cursor: pointer; }
+.profile-img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 3; border: 1px solid var(--oxford-gold-dim); filter: sepia(0.3) contrast(1.1) brightness(0.9); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s, filter 0.6s; }
+.profile-glow { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at center, var(--oxford-gold) 0%, transparent 80%); filter: blur(40px); opacity: 0.15; z-index: 1; transition: opacity 0.6s, transform 0.6s; transform: scale(1); }
+.profile-border { position: absolute; width: 100%; height: 100%; border: 1px solid var(--oxford-gold); top: 15px; left: 15px; z-index: 2; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
+
+.profile-image-container:hover .profile-img { transform: scale(1.03); filter: sepia(0) contrast(1.2) brightness(1.1); box-shadow: 0 0 50px rgba(212, 175, 55, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.3); border-color: var(--oxford-gold); }
+.profile-image-container:hover .profile-border { top: -20px; left: -20px; border-color: var(--oxford-gold-dim); transform: scale(1.05); }
+.profile-image-container:hover .profile-glow { opacity: 0.8; transform: scale(1.2); }
+
+.role-title { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--oxford-gold); margin-bottom: 2rem; letter-spacing: 2px; }
+.about-desc { font-family: 'Prompt', sans-serif; font-size: 1.25rem; font-weight: 500; line-height: 1.8; color: #fff; margin-bottom: 2rem; border-left: 2px solid var(--oxford-gold); padding-left: 1.5rem; letter-spacing: 0.5px; }
+.about-details { font-family: 'Prompt', sans-serif; font-size: 0.95rem; font-weight: 300; line-height: 1.9; color: #cfcbc2; margin-bottom: 3rem; letter-spacing: 0.5px; }
+.skills-mini { display: flex; flex-wrap: wrap; gap: 1rem; }
+.skill-tag { background: rgba(0, 19, 43, 0.75); border: 1px solid var(--oxford-gold-dim); padding: 0.8rem 1.2rem; font-size: 0.95rem; color: var(--oxford-gold); letter-spacing: 1px; flex: 1; text-align: center; transition: all 0.3s; }
+.skill-tag:hover { background: var(--oxford-gold); color: var(--oxford-blue); transform: translateY(-3px); }
+.skill-tag i { margin-right: 0.5rem; }
+
+@media (max-width: 900px) {
+  .about-profile { justify-content: center; }
+  .profile-image-container { margin-right: 0; margin-bottom: 3rem; }
+  .about-content { text-align: center; }
+  .about-desc { border-left: none; padding-left: 0; }
+}
+
+/* YouTube Media Section */
+.media-showcase { padding-top: 5rem; padding-bottom: 5rem; }
+.video-carousel {
+    display: flex; gap: 2.5rem; overflow-x: auto; padding: 2rem 5vw;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.video-carousel::-webkit-scrollbar { display: none; }
+.video-wrapper {
+    flex: 0 0 65%; max-width: 600px; height: 340px; scroll-snap-align: center;
+    position: relative; border: 1px solid var(--oxford-gold-dim);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+    background: rgba(0, 19, 43, 0.8); backdrop-filter: blur(10px);
+    border-radius: 4px; overflow: hidden;
+}
+.video-wrapper iframe {
+    position: relative; z-index: 2; width: 100%; height: 100%;
+}
+.video-glow {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.5s; z-index: 1; pointer-events: none;
+}
+.video-wrapper:hover {
+    transform: scale(1.03); border-color: var(--oxford-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+.video-wrapper:hover .video-glow { opacity: 1; }
+
+@media (max-width: 900px) {
+    .video-wrapper { flex: 0 0 85%; height: 260px; }
 }

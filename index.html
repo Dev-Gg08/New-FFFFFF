@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Application for University of Oxford</title>
+    <title>Jaturong K. | DEV-GG08</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -21,21 +23,22 @@
     </div>
 
     <!-- Cinematic Background Watermarks -->
-    <div class="bg-watermark w-1">VERITAS</div>
-    <div class="bg-watermark w-2">SAPIENTIA</div>
+    <div class="bg-watermark w-1">FRONTEND</div>
+    <div class="bg-watermark w-2">DEVELOPER</div>
 
     <!-- 3D Interactive Canvas -->
     <div id="canvas-container">
         <canvas id="webgl-canvas"></canvas>
     </div>
 
-    <!-- UI Overlay (Oxford Elegant Theme) -->
+    <!-- UI Overlay -->
     <nav class="navbar">
-        <div class="logo">PORTFOLIO<span style="opacity: 0.5;">.CANDIDATE</span></div>
+        <div class="logo">DEV<span style="opacity: 0.5;">-GG08</span></div>
         <div class="nav-links">
-            <a href="#research">Research</a>
-            <a href="#projects">Methodology</a>
-            <a href="#contact">Statement</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Repositories</a>
+            <a href="#media">Clips</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -43,14 +46,13 @@
         <!-- Section 1: Hero -->
         <section class="panel hero">
             <div class="hero-content">
-                <p class="tagline">Application for the University of Oxford</p>
+                <p class="tagline">Developer Portfolio</p>
                 <h1 class="elegant-title">
-                    <span class="fade-up">EXPLORING</span><br>
-                    <span class="fade-up">COMPUTATIONAL</span><br>
-                    <span class="fade-up">COMPLEXITY.</span>
+                    <span class="fade-up">JATURONG</span><br>
+                    <span class="fade-up">KITCHOKPRASERT.</span>
                 </h1>
                 <p class="sub-desc fade-up delay-2">
-                    Bridging the theoretical depths of Computer Science with the elegant realities of Mathematical Physics and Interactive Systems.
+                    Frontend Developer creating structured, interactive, and modern web applications. Focusing on JavaScript, CSS, and fluid 3D experiences.
                 </p>
             </div>
             <div class="scroll-indicator">
@@ -59,70 +61,141 @@
             </div>
         </section>
 
-        <!-- Section 2: Academic Focus -->
-        <section class="panel academic" id="research">
-            <div class="grid-layout">
-                <div class="grid-left">
-                    <h2 class="section-title">ACADEMIC<br>RIGOUR</h2>
+        <!-- Section 2: About Me -->
+        <section class="panel academic" id="about">
+            <div class="grid-layout about-grid">
+                <div class="grid-left about-profile">
+                    <div class="profile-image-container">
+                        <img src="https://github.com/Dev-Gg08.png" alt="Jaturong K. - AI Developer" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/00132b/D4AF37?text=AI+DEV'">
+                        <div class="profile-glow"></div>
+                        <div class="profile-border"></div>
+                    </div>
                 </div>
-                <div class="grid-right">
-                    <div class="thesis-item">
-                        <h3>1. Algorithmic Optimization</h3>
-                        <p>Researching advanced data structures to minimize time complexity in NP-hard geometric routing problems.</p>
-                        <div class="gold-line"></div>
-                    </div>
-                    <div class="thesis-item">
-                        <h3>2. Machine Learning Architecture</h3>
-                        <p>Developing robust neural networks focused on interpretability and reducing computational overhead in natural language processing.</p>
-                        <div class="gold-line"></div>
-                    </div>
-                    <div class="thesis-item">
-                        <h3>3. Quantum Information</h3>
-                        <p>Studying the mathematical foundations of quantum cryptography and simulating state vectors using high-performance compute clusters.</p>
-                        <div class="gold-line"></div>
+                <div class="grid-right about-content">
+                    <h2 class="section-title" style="margin-bottom: 1rem;">ABOUT ME</h2>
+                    <h3 class="role-title">The AI-Empowered Web Developer.</h3>
+                    <p class="about-desc">
+                        "ผมคือนักพัฒนาเว็บไซต์ที่เจาะทะลุทุกขีดจำกัดด้วยพลังของ Artificial Intelligence อย่างบ้าคลั่ง!"
+                    </p>
+                    <p class="about-details">
+                        ผมผสมผสาน <strong>Prompt Engineering</strong> ขั้นสูงเข้ากับทักษะโค้ดดิ้งแบบเข้มข้น ทำให้ผมเนรมิตระบบเว็ปไซต์เบื้องหลังที่ซับซ้อน งานออกแบบ UI/UX กระจกสไตล์โลกอนาคต ไปจนถึง 3D WebGL (Three.js) ระดับ God-Tier ออกมาได้อย่างรวดเร็ว ไร้ขีดจำกัด และโหดกว่านักพัฒนาทั่วไปหลายเท่าตัว!
+                    </p>
+                    
+                    <div class="skills-mini">
+                        <span class="skill-tag"><i class="fa-solid fa-microchip"></i> AI-Assisted Coding</span>
+                        <span class="skill-tag"><i class="fa-brands fa-js"></i> God-Tier System Logic</span>
+                        <span class="skill-tag"><i class="fa-solid fa-cube"></i> Interactive 3D WebGL</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Demonstrated Works -->
+        <!-- Section 3: GitHub Projects -->
         <section class="panel projects" id="projects">
-            <h2 class="section-title text-center">SELECTED PAPERS & PROJECTS</h2>
+            <h2 class="section-title text-center">GITHUB REPOSITORIES</h2>
             <div class="project-list">
+                
                 <div class="project-card">
                     <div class="card-glow"></div>
                     <div class="project-info">
-                        <span class="project-year">2025</span>
-                        <h3 class="serif-h3">Neural Topology Mapping</h3>
-                        <p>A thesis on visualizing high-dimensional manifolds of trained neural networks. Implemented a rendering pipeline to project 5D spaces into navigable 3D environments.</p>
-                        <a href="#" class="read-more">Read Thesis <span>&rarr;</span></a>
+                        <span class="project-year"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</span>
+                        <h3 class="serif-h3">TransLens</h3>
+                        <p>An advanced JavaScript project showcasing dynamic data handling and interactive web elements. Actively updated and maintained.</p>
+                        <a href="https://github.com/Dev-Gg08/TransLens" target="_blank" class="read-more">View Repository <span>&rarr;</span></a>
                     </div>
                 </div>
+
                 <div class="project-card alternate">
                     <div class="card-glow"></div>
                     <div class="project-info">
-                        <span class="project-year">2024</span>
-                        <h3 class="serif-h3">Abstract Syntax Tree Synthesizer</h3>
-                        <p>A custom compiler written in Rust that mathematically analyzes programmatic structures to predict execution bottlenecks before runtime compilation.</p>
-                        <a href="#" class="read-more">View Repository <span>&rarr;</span></a>
+                        <span class="project-year"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</span>
+                        <h3 class="serif-h3">New-FFFFFF & Dev-movie</h3>
+                        <p>Interactive web applications focusing on data processing, DOM manipulation, and multimedia layouts for modern browsers.</p>
+                        <a href="https://github.com/Dev-Gg08/New-FFFFFF" target="_blank" class="read-more">View Repository <span>&rarr;</span></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-glow"></div>
+                    <div class="project-info">
+                        <span class="project-year"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS & Layout</span>
+                        <h3 class="serif-h3">Portfolio-project & Math-challenge</h3>
+                        <p>CSS-driven projects focusing on responsive design, animations, structured grids, and beautiful algorithmic logic styling.</p>
+                        <a href="https://github.com/Dev-Gg08/Portfolio-project" target="_blank" class="read-more">View Repository <span>&rarr;</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: Statement of Purpose -->
+        <!-- Section 3.5: YouTube Showcase -->
+        <section class="panel media-showcase" id="media">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">GAMEPLAY & CLIPS</h2>
+                <a href="https://www.youtube.com/@MangAbbu02" target="_blank" class="gold-btn" style="padding: 0.8rem 1.5rem; font-size: 0.85rem;">
+                    <i class="fa-brands fa-youtube" style="font-size: 1.2rem; color: #ff0000; margin-right: 5px;"></i> @MangAbbu02
+                </a>
+            </div>
+
+            <div class="video-carousel">
+                <!-- Video 1 -->
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <!-- Replace 'M7lc1UVf-VE' with your 11-character Video ID -->
+                    <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <iframe src="https://www.youtube.com/embed/W_V4Oq8wPGE" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- Video 3 -->
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <iframe src="https://www.youtube.com/embed/6ZfuNTqbHE8" title="YouTube video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- Video 4 -->
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <iframe src="https://www.youtube.com/embed/2_YxN_uVdUI" title="YouTube video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- Video 5 -->
+                <div class="video-wrapper">
+                    <div class="video-glow"></div>
+                    <iframe src="https://www.youtube.com/embed/zJSY8tbf_ys" title="YouTube video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: rgba(249,246,240,0.5); font-style: italic; font-size: 0.9rem;">Swipe to view more videos ➔</p>
+        </section>
+
+        <!-- Section 4: Contact -->
         <section class="panel statement" id="contact">
             <div class="statement-box">
                 <div class="corner-accents"></div>
-                <h2 class="section-title">STATEMENT OF PURPOSE</h2>
-                <p class="sop-text">
-                    "I believe that the true essence of computer science is not merely writing code, but understanding the profound mathematical truths that govern information. Oxford’s tradition of rigorous inquiry aligns perfectly with my ambition to push the boundaries of computational theory."
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">LET'S CONNECT</h2>
+                <p class="sop-text" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto; margin-bottom: 2.5rem;">
+                    "I am constantly building, learning, and pushing the boundaries of frontend development. Let's create something extraordinary together."
                 </p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/jaturong.kitchokprasert/" target="_blank" class="social-btn" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://github.com/Dev-Gg08" target="_blank" class="social-btn" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@my_mm22551" target="_blank" class="social-btn" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@MangAbbu02" target="_blank" class="social-btn" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                
                 <div style="margin-top: 3rem;">
-                    <a href="mailto:admission@oxford.edu" class="gold-btn">REQUEST FULL C.V.</a>
+                    <a href="https://github.com/Dev-Gg08" target="_blank" class="gold-btn"><i class="fa-brands fa-github"></i> FOLLOW ON GITHUB</a>
                 </div>
             </div>
-            <p class="footer-credit">NON INFERIORA SECUTUS — Seeking nothing inferior</p>
+            <p class="footer-credit">© 2026 JATURONG K. — DEV-GG08</p>
         </section>
     </main>
 
